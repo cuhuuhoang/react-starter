@@ -6,7 +6,7 @@ import PicMain from "./components/pics/PicMain";
 // tab name with big name
 export const homeTab = 'home'
 // tab open on start up
-export const defaultTab = 'home'
+export const defaultTab = 'pic'
 // all tab
 export const itemConfigArrays = [
   {
