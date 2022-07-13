@@ -2,11 +2,12 @@ import AppHome from "./components/home/AppHome";
 import CommentList from "./components/comments/CommentList";
 import SeasonMain from "./components/seasons/SeasonMain";
 import PicMain from "./components/pics/PicMain";
+import VideoMain from "./components/videos/VideoMain";
 
 // tab name with big name
 export const homeTab = 'home'
 // tab open on start up
-export const defaultTab = 'pic'
+export const defaultTab = 'video'
 // all tab
 export const itemConfigArrays = [
   {
@@ -28,5 +29,10 @@ export const itemConfigArrays = [
     name: 'pic',
     display: 'Pics',
     html: <PicMain />
+  },
+  {
+    name: 'video',
+    display: 'Videos',
+    html: <VideoMain />
   }
 ]

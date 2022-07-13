@@ -1,6 +1,6 @@
 import React from "react";
 import unsplash from "./unsplash";
-import SearchBar from "./SearchBar";
+import SearchBar from "../searchbarv1/SearchBar";
 import ImageList from "./ImageList";
 
 class PicMain extends React.Component {
