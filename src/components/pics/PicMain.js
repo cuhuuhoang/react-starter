@@ -16,7 +16,7 @@ class PicMain extends React.Component {
   render() {
     return (
       <div className="container" style={{marginTop: '10px'}}>
-        <SearchBar onSubmit={this.onSearchSubmit} />
+        <SearchBar onSubmit={this.onSearchSubmit} message="Search pictures" />
         <ImageList images={this.state.images} />
       </div>
     );

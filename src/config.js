@@ -3,11 +3,15 @@ import CommentList from "./components/comments/CommentList";
 import SeasonMain from "./components/seasons/SeasonMain";
 import PicMain from "./components/pics/PicMain";
 import VideoMain from "./components/videos/VideoMain";
+import AccordionMain from "./components/accordion/AccordionMain";
+import WikiMain from "./components/wiki/WikiMain";
+import DropdownMain from "./components/dropdown/DropdownMain";
+import Translate from "./components/translate/Translate";
 
 // tab name with big name
 export const homeTab = 'home'
 // tab open on start up
-export const defaultTab = 'video'
+export const defaultTab = 'translate'
 // all tab
 export const itemConfigArrays = [
   {
@@ -34,5 +38,25 @@ export const itemConfigArrays = [
     name: 'video',
     display: 'Videos',
     html: <VideoMain />
+  },
+  {
+    name: 'accordion',
+    display: 'Accordion',
+    html: <AccordionMain />
+  },
+  {
+    name: 'wiki',
+    display: 'Wiki',
+    html: <WikiMain />
+  },
+  {
+    name: 'dropdown',
+    display: 'Dropdown',
+    html: <DropdownMain />
+  },
+  {
+    name: 'translate',
+    display: 'Translate',
+    html: <Translate />
   }
 ]

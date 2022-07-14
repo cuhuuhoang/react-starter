@@ -21,7 +21,7 @@ class VideoMain extends React.Component {
   render() {
     return (
       <div className="container" style={{marginTop: '10px'}}>
-        <SearchBar onSubmit={this.onSearchSubmit} />
+        <SearchBar onSubmit={this.onSearchSubmit} message="Search videos" />
         <div className="row">
           <div className="col-sm-7">
             <VideoDetail video={this.state.selectedVideo} />
