@@ -8,54 +8,59 @@ import WikiMain from "./components/wiki/WikiMain";
 import DropdownMain from "./components/dropdown/DropdownMain";
 import Translate from "./components/translate/Translate";
 
-// tab name with big name
-export const homeMenuIndex = 0
-// tab open on start up
-export const defaultMenuIndex = 0
 // all tab
 export const menuConfigs = [
   {
     name: 'home',
+    path: '/',
     display: 'Starter',
     html: <AppHome />
   },
   {
     name: 'comment',
+    path: '/comment',
     display: 'Comments',
     html: <CommentList />
   },
   {
     name: 'season',
+    path: '/season',
     display: 'Seasons',
     html: <SeasonMain />
   },
   {
     name: 'pic',
+    path: '/pic',
     display: 'Pics',
     html: <PicMain />
   },
   {
     name: 'video',
+    path: '/video',
     display: 'Videos',
     html: <VideoMain />
   },
   {
     name: 'accordion',
+    path: '/accordion',
     display: 'Accordion',
     html: <AccordionMain />
   },
   {
     name: 'wiki',
+    path: '/wiki',
     display: 'Wiki',
     html: <WikiMain />
   },
   {
     name: 'dropdown',
+    path: '/dropdown',
     display: 'Dropdown',
     html: <DropdownMain />
   },
   {
     name: 'translate',
+    path: '/translate',
     display: 'Translate',
     html: <Translate />
   }

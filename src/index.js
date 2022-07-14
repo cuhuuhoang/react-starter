@@ -1,20 +1,31 @@
 import React, {useState} from "react";
 import ReactDOM from "react-dom/client";
-import {homeMenuIndex, defaultMenuIndex, menuConfigs} from "./config";
+import {menuConfigs} from "./config";
 
+// build map item config
+const menuMap = {}
+menuConfigs.forEach(menuConfig => {
+  menuMap[menuConfig.path] = {
+    display: menuConfig.display,
+    html: menuConfig.html
+  }
+})
+
+// main app
 const BaseApp = () => {
 
-  const [activeMenu, setActiveMenu] = useState(menuConfigs[defaultMenuIndex]);
+  const [activePath, setActivePath] = useState(window.location.pathname);
   const [navOpen, setNavOpen] = useState(false);
-  const homeMenu = menuConfigs[homeMenuIndex];
+  const homeMenu = menuConfigs[0];
 
   const onMenuClick = (menuConfig) => {
-    setActiveMenu(menuConfig)
+    window.history.pushState({}, '', menuConfig.path);
+    setActivePath(menuConfig.path);
   }
 
   const renderNavMenus = menuConfigs.map(menuConfig => {
     return menuConfig.name === homeMenu.name ? "" :
-      <li className={`nav-item ${activeMenu === menuConfig.name ? "active" : ""}`} key={menuConfig.name}>
+      <li className={`nav-item ${activePath === '/' + menuConfig.name ? "active" : ""}`} key={menuConfig.name}>
         <a className="nav-link" name={menuConfig.name} onClick={() => onMenuClick(menuConfig)}>
           {menuConfig.display}
         </a>
@@ -42,7 +53,7 @@ const BaseApp = () => {
   return (
     <div className="container">
       {renderNav()}
-      {activeMenu.html}
+      {menuMap[activePath].html}
     </div>
   );
 
