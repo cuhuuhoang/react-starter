@@ -9,11 +9,11 @@ import DropdownMain from "./components/dropdown/DropdownMain";
 import Translate from "./components/translate/Translate";
 
 // tab name with big name
-export const homeTab = 'home'
+export const homeMenuIndex = 0
 // tab open on start up
-export const defaultTab = 'translate'
+export const defaultMenuIndex = 0
 // all tab
-export const itemConfigArrays = [
+export const menuConfigs = [
   {
     name: 'home',
     display: 'Starter',

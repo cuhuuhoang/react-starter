@@ -1,70 +1,51 @@
-import React from "react";
+import React, {useState} from "react";
 import ReactDOM from "react-dom/client";
-import NavItem from "./components/shared/NavItem";
-import {homeTab, defaultTab, itemConfigArrays} from "./config";
-import navItem from "./components/shared/NavItem";
+import {homeMenuIndex, defaultMenuIndex, menuConfigs} from "./config";
 
-// build map item config
-const itemConfig = {}
-itemConfigArrays.forEach(item => {
-  itemConfig[item.name] = {
-    display: item.display,
-    html: item.html
-  }
-})
+const BaseApp = () => {
 
-// main app
-class App extends React.Component {
+  const [activeMenu, setActiveMenu] = useState(menuConfigs[defaultMenuIndex]);
+  const [navOpen, setNavOpen] = useState(false);
+  const homeMenu = menuConfigs[homeMenuIndex];
 
-  state = { activeName: defaultTab, navOpen: false}
-
-  onMenuClick = (e) => {
-    const name = e.target.getAttribute('name');
-    this.setState({activeName: name});
+  const onMenuClick = (menuConfig) => {
+    setActiveMenu(menuConfig)
   }
 
-  renderNavItems() {
-    return (
-      <ul className="navbar-nav mr-auto">
-        {itemConfigArrays.map(item => item.name === homeTab ? "" : <NavItem activeName={this.state.activeName} key={item.name}
-                   name={item.name} onClick={this.onMenuClick} displayName={item.display} />)}
-      </ul>
-    );
-  }
+  const renderNavMenus = menuConfigs.map(menuConfig => {
+    return menuConfig.name === homeMenu.name ? "" :
+      <li className={`nav-item ${activeMenu === menuConfig.name ? "active" : ""}`} key={menuConfig.name}>
+        <a className="nav-link" name={menuConfig.name} onClick={() => onMenuClick(menuConfig)}>
+          {menuConfig.display}
+        </a>
+      </li>
+  });
 
-  renderNav() {
+  const renderNav = () => {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light" >
-        <a className="navbar-brand" name={homeTab} onClick={this.onMenuClick}>{itemConfig[homeTab].display}</a>
-        <button className="navbar-toggler" type="button" onClick={() => this.setState({navOpen : true})}>
+        <a className="navbar-brand" name={homeMenu.display} onClick={() => onMenuClick(homeMenu)}>{homeMenu.display}</a>
+        <button className="navbar-toggler" type="button" onClick={() => setNavOpen(true)}>
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className={`collapse navbar-collapse ${this.state.navOpen ? 'show' : ''}`} onClick={() => this.setState({navOpen : false})}>
+        <div className={`collapse navbar-collapse ${navOpen ? 'show' : ''}`} onClick={() => setNavOpen(false)}>
           <ul className="navbar-nav mr-auto">
-            {this.renderNavItems()}
+            {renderNavMenus}
           </ul>
         </div>
       </nav>
     );
   }
 
-  renderContainer() {
-    return (
-      <div>
-        {itemConfig[this.state.activeName].html}
-      </div>
-    );
-  }
 
-  render() {
-    return (
-      <div className="container">
-        {this.renderNav()}
-        {this.renderContainer()}
-      </div>
-    );
-  }
+  return (
+    <div className="container">
+      {renderNav()}
+      {activeMenu.html}
+    </div>
+  );
+
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+ReactDOM.createRoot(document.getElementById('root')).render(<BaseApp />)
