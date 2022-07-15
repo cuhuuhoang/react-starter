@@ -26,3 +26,6 @@ yarn-error.log*
 
 #private
 private.js
+
+#deploy
+deploy.sh

@@ -29,6 +29,10 @@ const Translate = () => {
   return (
     <div className="container" style={{marginTop: '10px'}}>
       <div className="row">
+        <h5>This translation component only work on localhost:3000</h5>
+      </div>
+      <hr/>
+      <div className="row">
         <DelayedTextBar setDelayedTerm={setText} message="To translate text"></DelayedTextBar>
       </div>
       <div className="pt-3">
