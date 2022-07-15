@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import SearchBar from "../searchbarv1/SearchBar";
+import SearchBar from "../searchbar/SearchBar";
 import VideoDetail from "./VideoDetail";
 import VideoList from "./VideoList";
 import useVideoSearch from "./useVideoSearch";

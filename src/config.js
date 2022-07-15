@@ -1,12 +1,13 @@
-import AppHome from "./components/home/AppHome";
-import CommentList from "./components/comments/CommentList";
-import SeasonMain from "./components/seasons/SeasonMain";
-import PicMain from "./components/pics/PicMain";
-import VideoMain from "./components/videos/VideoMain";
-import AccordionMain from "./components/accordion/AccordionMain";
-import WikiMain from "./components/wiki/WikiMain";
-import DropdownMain from "./components/dropdown/DropdownMain";
-import Translate from "./components/translate/Translate";
+import AppHome from "./modules/home/AppHome";
+import CommentList from "./modules/comments/CommentList";
+import SeasonMain from "./modules/seasons/SeasonMain";
+import PicMain from "./modules/pics/PicMain";
+import VideoMain from "./modules/videos/VideoMain";
+import AccordionMain from "./modules/accordion/AccordionMain";
+import WikiMain from "./modules/wiki/WikiMain";
+import DropdownMain from "./modules/dropdown/DropdownMain";
+import Translate from "./modules/translate/Translate";
+import Insurance from "./modules/insurance/Insurance";
 
 // all tab
 export const menuConfigs = [
@@ -63,5 +64,11 @@ export const menuConfigs = [
     path: '/translate',
     display: 'Translate',
     html: <Translate />
+  },
+  {
+    name: 'insurance',
+    path: '/insurance',
+    display: 'Insurance',
+    html: <Insurance />
   }
 ]

@@ -1,6 +1,6 @@
 import React from "react";
 import unsplash from "./unsplash";
-import SearchBar from "../searchbarv1/SearchBar";
+import SearchBar from "../searchbar/SearchBar";
 import ImageList from "./ImageList";
 import Spinner from "../seasons/Spinner";
 
