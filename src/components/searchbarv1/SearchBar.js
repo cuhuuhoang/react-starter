@@ -1,30 +1,28 @@
 import './SearchBar.css';
-import React from "react";
+import React, {useState} from "react";
 
-class SearchBar extends React.Component {
-  state = {term: ''};
+const SearchBar = ({onSubmit, message}) => {
+  const [term, setTerm] = useState('');
+  const [delayedTerm, setDelayedTerm] = useState('');
 
-  onFormSubmit = event => {
-    event.preventDefault();
-    this.props.onSubmit(this.state.term);
-  };
-
-  render() {
-    return (
-      <div className="form-group has-search rounded">
-        <form onSubmit={this.onFormSubmit}>
-          <span className="bi bi-search form-control-feedback"></span>
-          <input type="text" className="form-control" placeholder={this.props.message} aria-label="Search"
-                 aria-describedby="search-addon" value={this.state.term}
-                 onChange={e => this.setState({term: e.target.value})}/>
-        </form>
-      </div>
-    )
+  const onFormSubmit = e => {
+    e.preventDefault();
+    if (term !== delayedTerm) {
+      setDelayedTerm(term);
+      onSubmit(term);
+    }
   }
-}
 
-SearchBar.defaultProps = {
-  message: 'Search'
+  return (
+    <div className="form-group has-search rounded">
+      <form onSubmit={onFormSubmit}>
+        <span className="bi bi-search form-control-feedback"></span>
+        <input type="text" className="form-control" placeholder={message} aria-label="Search"
+               aria-describedby="search-addon" value={term}
+               onChange={e => setTerm(e.target.value)}/>
+      </form>
+    </div>
+  );
 }
 
 export default SearchBar;
