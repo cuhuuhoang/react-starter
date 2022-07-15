@@ -53,7 +53,7 @@ const BaseApp = () => {
   return (
     <div className="container">
       {renderNav()}
-      {menuMap[activePath].html}
+      {menuMap[activePath] ? menuMap[activePath].html : <h1>Path not found :(</h1>}
     </div>
   );
 

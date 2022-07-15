@@ -8,6 +8,7 @@ import WikiMain from "./modules/wiki/WikiMain";
 import DropdownMain from "./modules/dropdown/DropdownMain";
 import Translate from "./modules/translate/Translate";
 import Insurance from "./modules/insurance/Insurance";
+import Songs from "./modules/songs/components/Songs";
 
 // all tab
 export const menuConfigs = [
@@ -70,5 +71,11 @@ export const menuConfigs = [
     path: '/insurance',
     display: 'Insurance',
     html: <Insurance />
+  },
+  {
+    name: 'songs',
+    path: '/songs',
+    display: 'Songs',
+    html: <Songs />
   }
 ]
