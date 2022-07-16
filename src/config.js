@@ -9,6 +9,7 @@ import DropdownMain from "./modules/dropdown/DropdownMain";
 import Translate from "./modules/translate/Translate";
 import Insurance from "./modules/insurance/Insurance";
 import Songs from "./modules/songs/components/Songs";
+import Blog from "./modules/blog/components/Blog";
 
 // all tab
 export const menuConfigs = [
@@ -77,5 +78,11 @@ export const menuConfigs = [
     path: '/songs',
     display: 'Songs',
     html: <Songs />
+  },
+  {
+    name: 'blog',
+    path: '/blog',
+    display: 'Blog',
+    html: <Blog />
   }
 ]
