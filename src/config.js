@@ -10,79 +10,73 @@ import Translate from "./modules/translate/Translate";
 import Insurance from "./modules/insurance/Insurance";
 import Songs from "./modules/songs/components/Songs";
 import Blog from "./modules/blog/components/Blog";
+import StreamMain from "./modules/stream/components/StreamMain";
 
 // all tab
 export const menuConfigs = [
   {
-    name: 'home',
-    path: '/',
+    name: '',
     display: 'Starter',
     html: <AppHome />
   },
   {
     name: 'comment',
-    path: '/comment',
     display: 'Comments',
     html: <CommentList />
   },
   {
     name: 'season',
-    path: '/season',
     display: 'Seasons',
     html: <SeasonMain />
   },
   {
     name: 'pic',
-    path: '/pic',
     display: 'Pics',
     html: <PicMain />
   },
   {
     name: 'video',
-    path: '/video',
     display: 'Videos',
     html: <VideoMain />
   },
   {
     name: 'accordion',
-    path: '/accordion',
     display: 'Accordion',
     html: <AccordionMain />
   },
   {
     name: 'wiki',
-    path: '/wiki',
     display: 'Wiki',
     html: <WikiMain />
   },
   {
     name: 'dropdown',
-    path: '/dropdown',
     display: 'Dropdown',
     html: <DropdownMain />
   },
   {
     name: 'translate',
-    path: '/translate',
     display: 'Translate',
     html: <Translate />
   },
   {
     name: 'insurance',
-    path: '/insurance',
     display: 'Insurance',
     html: <Insurance />
   },
   {
     name: 'songs',
-    path: '/songs',
     display: 'Songs',
     html: <Songs />
   },
   {
     name: 'blog',
-    path: '/blog',
     display: 'Blog',
     html: <Blog />
+  },
+  {
+    name: 'streams',
+    display: 'Streams',
+    html: <StreamMain />
   }
 ]

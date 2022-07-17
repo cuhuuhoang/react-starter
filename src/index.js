@@ -1,11 +1,12 @@
 import React, {useState} from "react";
 import ReactDOM from "react-dom/client";
 import {menuConfigs} from "./config";
+import history from "./history";
 
 // build map item config
 const menuMap = {}
 menuConfigs.forEach(menuConfig => {
-  menuMap[menuConfig.path] = {
+  menuMap[menuConfig.name] = {
     display: menuConfig.display,
     html: menuConfig.html
   }
@@ -14,13 +15,21 @@ menuConfigs.forEach(menuConfig => {
 // main app
 const BaseApp = () => {
 
-  const [activePath, setActivePath] = useState(window.location.pathname);
+  const [activePath, setActivePath] = useState(window.location.pathname.split('/')[1]);
   const [navOpen, setNavOpen] = useState(false);
   const homeMenu = menuConfigs[0];
 
   const onMenuClick = (menuConfig) => {
-    window.history.pushState({}, '', menuConfig.path);
-    setActivePath(menuConfig.path);
+    pushPath(menuConfig.name);
+  }
+
+  const pushPath = (path) => {
+    window.history.pushState({}, '', path);
+    history.push('/' + path);
+    if (path === '/') {
+      path = '';
+    }
+    setActivePath(path);
   }
 
   const renderNavMenus = menuConfigs.map(menuConfig => {
@@ -35,7 +44,7 @@ const BaseApp = () => {
   const renderNav = () => {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light" >
-        <a className="navbar-brand" name={homeMenu.display} onClick={() => onMenuClick(homeMenu)}>{homeMenu.display}</a>
+        <a className="navbar-brand" name={homeMenu.display} onClick={() => pushPath('/')}>{homeMenu.display}</a>
         <button className="navbar-toggler" type="button" onClick={() => setNavOpen(true)}>
           <span className="navbar-toggler-icon"></span>
         </button>
