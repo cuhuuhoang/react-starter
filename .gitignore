@@ -29,3 +29,6 @@ private.js
 
 #deploy
 deploy.sh
+
+#npm
+package-lock.json

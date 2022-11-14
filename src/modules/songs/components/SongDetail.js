@@ -4,11 +4,11 @@ import {connect} from "react-redux";
 const SongDetail = ({selectedSong}) => {
   return (
     selectedSong ?
-    <div>
+    <div data-testid="selected-song">
       <h5>Selected Song</h5>
       <hr/>
-      <p>Title: {selectedSong.title}</p>
-      <p>Duration: {selectedSong.duration}</p>
+      <p data-testid="detailed-title">Title: {selectedSong.title}</p>
+      <p data-testid="detailed-duration">Duration: {selectedSong.duration}</p>
     </div> : null
   );
 }

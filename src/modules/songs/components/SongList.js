@@ -6,7 +6,7 @@ const SongList = ({songs, selectSong}) => {
 
   const renderedList = songs.map(song=> {
     return (
-      <div key={song.title}>
+      <div key={song.title} data-key={song.title}>
         <div className="row">
           <div className="col-sm-8">{song.title}</div>
           <div className="col-sm-4">
