@@ -1,0 +1,12 @@
+// fetch scoops
+export const START_FETCH_SCOOPS = "START_FETCH_SCOOPS";
+export const FETCH_SCOOPS = "FETCH_SCOOPS";
+export const ERROR_FETCH_SCOOPS = "ERROR_FETCH_SCOOPS";
+// fetch toppings
+export const START_FETCH_TOPPINGS = "START_FETCH_TOPPINGS";
+export const FETCH_TOPPINGS = "FETCH_TOPPINGS";
+export const ERROR_FETCH_TOPPINGS = "ERROR_FETCH_TOPPINGS";
+
+// choose
+export const CHANGE_SUM_SCOOPS = "CHANGE_SUM_SCOOPS";
+export const CHANGE_SUM_TOPPINGS = "CHANGE_SUM_TOPPINGS";

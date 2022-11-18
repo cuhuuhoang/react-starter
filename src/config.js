@@ -11,6 +11,7 @@ import Insurance from "./modules/insurance/Insurance";
 import Songs from "./modules/songs/components/Songs";
 import Blog from "./modules/blog/components/Blog";
 import StreamMain from "./modules/stream/components/StreamMain";
+import Sundae from "./modules/sundae/components/Sundae";
 
 // all tab
 export const menuConfigs = [
@@ -78,5 +79,10 @@ export const menuConfigs = [
     name: 'streams',
     display: 'Streams',
     html: <StreamMain />
+  },
+  {
+    name: 'sundaes',
+    display: 'Sundaes',
+    html: <Sundae />
   }
 ]
